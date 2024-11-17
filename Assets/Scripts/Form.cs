@@ -19,22 +19,25 @@ public class Form : MonoBehaviour
         resultText.gameObject.SetActive(false);
         toLevel.gameObject.SetActive(false);
     }
-    public void ToLevel(){
-        SceneManager.LoadScene("Level1");
-    }
     public void EvaluateAnswers()
     {
+
+        int recycleScore, localProduceScore, clothesScore;
+        
+        if (!int.TryParse(recycleInput.text, out recycleScore) || 
+            !int.TryParse(localProduceInput.text, out localProduceScore) || 
+            !int.TryParse(clothesInput.text, out clothesScore))
+        {
+            SceneManager.LoadScene("Level1Quiz");
+            return;
+        }
+
+
         formQuestions.gameObject.SetActive(false);
         submitButton.gameObject.SetActive(false);
         toLevel.gameObject.SetActive(true);
-       
-        int recycleScore = int.Parse(recycleInput.text);
-        int localProduceScore = int.Parse(localProduceInput.text);
-        int clothesScore = int.Parse(clothesInput.text);
-
 
         string feedback = "Areas to improve:\n";
-
 
         if (recycleScore < 3)
         {
@@ -56,9 +59,9 @@ public class Form : MonoBehaviour
             feedback = "Great job! You're making environmentally friendly choices!";
         }
 
-
         resultText.text = feedback;
         resultText.gameObject.SetActive(true);
+
         recycleInput.gameObject.SetActive(false);
         clothesInput.gameObject.SetActive(false);
         localProduceInput.gameObject.SetActive(false);
