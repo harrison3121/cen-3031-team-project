@@ -32,7 +32,7 @@ public class Form : MonoBehaviour
             !int.TryParse(clothesInput.text, out clothesScore))
         {
 
-            SceneManager.LoadScene("LevelQuiz");
+            SceneManager.LoadScene("Level1Quiz");
             return;
         }
 
