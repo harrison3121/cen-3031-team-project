@@ -19,6 +19,9 @@ public class Form : MonoBehaviour
         resultText.gameObject.SetActive(false);
         toLevel.gameObject.SetActive(false);
     }
+    public void ToLevel(){
+        SceneManager.LoadScene("Level1");
+    }
     public void EvaluateAnswers()
     {
 
@@ -28,14 +31,16 @@ public class Form : MonoBehaviour
             !int.TryParse(localProduceInput.text, out localProduceScore) || 
             !int.TryParse(clothesInput.text, out clothesScore))
         {
-            SceneManager.LoadScene("Level1Quiz");
+
+            SceneManager.LoadScene("LevelQuiz");
             return;
         }
 
-
+ 
         formQuestions.gameObject.SetActive(false);
         submitButton.gameObject.SetActive(false);
         toLevel.gameObject.SetActive(true);
+
 
         string feedback = "Areas to improve:\n";
 
@@ -59,8 +64,10 @@ public class Form : MonoBehaviour
             feedback = "Great job! You're making environmentally friendly choices!";
         }
 
+
         resultText.text = feedback;
         resultText.gameObject.SetActive(true);
+
 
         recycleInput.gameObject.SetActive(false);
         clothesInput.gameObject.SetActive(false);
