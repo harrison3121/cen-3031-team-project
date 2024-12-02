@@ -60,8 +60,8 @@ public class PlayerCollision : MonoBehaviour
                 completeText.text = "You Won!";
                 completeText.gameObject.SetActive(true);
                 completeButton.gameObject.SetActive(true);
-                PlayerPrefs.SetInt("World2Unlocked", 1); // 1 indicates unlocked
-                PlayerPrefs.Save();
+                //PlayerPrefs.SetInt("World2Unlocked", 1); 
+                //PlayerPrefs.Save();
                 Time.timeScale = 0f;
             }
         }

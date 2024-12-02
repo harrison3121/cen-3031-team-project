@@ -6,6 +6,9 @@ public class MainMenu : MonoBehaviour
 {
 
     public Button world2Button;
+    public Button world3Button;
+    public Button world4Button;
+    public Button world5Button;
     public void StartLevel1()
     {
         SceneManager.LoadScene("Level1Lesson");
@@ -30,11 +33,23 @@ public class MainMenu : MonoBehaviour
 
     void Start(){
         world2Button.gameObject.SetActive(false);
-        Debug.Log("World2Unlocked: " + PlayerPrefs.GetInt("World2Unlocked", 0));
+        world3Button.gameObject.SetActive(false);
+        world4Button.gameObject.SetActive(false);
+        world5Button.gameObject.SetActive(false);
+        //Debug.Log("World2Unlocked: " + PlayerPrefs.GetInt("World2Unlocked", 0));
     }
     void Update(){
         if(PlayerPrefs.GetInt("World2Unlocked", 0) == 1){
             world2Button.gameObject.SetActive(true);
+        }
+        if(PlayerPrefs.GetInt("World3Unlocked", 0) == 1){
+            world3Button.gameObject.SetActive(true);
+        }
+        if(PlayerPrefs.GetInt("World4Unlocked", 0) == 1){
+            world4Button.gameObject.SetActive(true);
+        }
+        if(PlayerPrefs.GetInt("World5Unlocked", 0) == 1){
+            world5Button.gameObject.SetActive(true);
         }
     }
 

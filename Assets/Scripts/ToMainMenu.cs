@@ -7,29 +7,34 @@ public class ToMainMenu : MonoBehaviour
     public void MainMenu1()
     {
         PlayerPrefs.SetInt("World2Unlocked", 1);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("Menu");
     }
 
     public void MainMenu2()
     {
         PlayerPrefs.SetInt("World3Unlocked", 1);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("Menu");
     }
 
     public void MainMenu3()
     {
         PlayerPrefs.SetInt("World4Unlocked", 1);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("Menu");
     }
 
     public void MainMenu4()
     {
         PlayerPrefs.SetInt("World5Unlocked", 1);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("Menu");
     }
     public void MainMenu5()
     {
         PlayerPrefs.SetInt("Done", 1);
+        PlayerPrefs.Save();
         SceneManager.LoadScene("Menu");
     }
 }
