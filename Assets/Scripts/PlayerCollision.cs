@@ -19,6 +19,7 @@ public class PlayerCollision : MonoBehaviour
 
 
     void Start(){
+        Time.timeScale = 1;
         UpdateLivesText();
         UpdateScoreText();
         completeText.gameObject.SetActive(false);

@@ -30,6 +30,12 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Level5Lesson");
     }
+    public void Reset(){
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+        SceneManager.LoadScene("Menu");
+
+    }
 
     void Start(){
         world2Button.gameObject.SetActive(false);
